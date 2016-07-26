@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<title>Firewall Rules | CryptoManager</title>
+		<!--
+		Copyright (c) 2013 TeamF1, Inc. (www.TeamF1.com)
+		All rights reserved.
+		-->
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<link rel="stylesheet" type="text/css" href="css/table.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.4.custom.css" />
+		<script type="text/javascript" language="javascript" src="js/jquery-1.8.0.min.js"></script>
+	</head>
+	<body>
+		<!-- Start Pop Up Dialog  -->
+		<div id="cri_overlay" class="configDialogMask"></div>
+		<!-- Start Pop Up Form  -->
+		<form name="cri_frmFirewallRules" id="cri_frmFirewallRules" action="cgi-action.html" method="post">
+			<input type="hidden" name="thispage" id="thispage" value="firewallRules.html">
+			<div class="configDialog" id="cri_dialog">
+				<div class="topBg">
+					<h1>IPv4 Firewall Rule Configuration</h1>
+					<a title="Close" id="btnClose" href="#"></a>
+				</div>
+				<div class="dialogMidArea">
+					<div class="configRow" id="cri_direction_div">
+						<label>Direction</label>
+						<select size="1" name="firewallRules.fromZoneType" value id="cri_direction" onChange="directionChange();">
+							<option value="1">Inbound </option>
+							<option value="2">Outbound</option>
+						</select>
+						</div>
+					  <div class="break" id="break1_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_serverceName_div">
+						<label>Service </label>
+						<select size="1" name="firewallRules.serviceName" id="cri_serverceName">
+							<option title value="ANY">ANY</option>
+							<option title value="AIM">AIM</option>
+							<option title value="BGP">BGP</option>
+							<option title value="BOOTP_CLIENT">BOOTP_CLIENT</option>
+							<option title value="BOOTP_SERVER">BOOTP_SERVER</option>
+							<option title value="CU-SEEME:UDP">CU-SEEME:UDP</option>
+							<option title value="CU-SEEME:TCP">CU-SEEME:TCP</option>
+							<option title value="DNS:UDP">DNS:UDP</option>
+							<option title value="DNS:TCP">DNS:TCP</option>
+							<option title value="FINGER">FINGER</option>
+							<option title value="FTP">FTP</option>
+							<option title value="HTTP">HTTP</option>
+							<option title value="HTTPS">HTTPS</option>
+							<option title value="ICMP-TYPE-3">ICMP-TYPE-3</option>
+							<option title value="ICMP-TYPE-4">ICMP-TYPE-4</option>
+							<option title value="ICMP-TYPE-5">ICMP-TYPE-5</option>
+							<option title value="ICMP-TYPE-6">ICMP-TYPE-6</option>
+							<option title value="ICMP-TYPE-7">ICMP-TYPE-7</option>
+							<option title value="ICMP-TYPE-8">ICMP-TYPE-8</option>
+							<option title value="ICMP-TYPE-9">ICMP-TYPE-9</option>
+							<option title value="ICMP-TYPE-10">ICMP-TYPE-10</option>
+							<option title value="ICMP-TYPE-11">ICMP-TYPE-11</option>
+							<option title value="ICMP-TYPE-13">ICMP-TYPE-13</option>
+							<option title value="ICQ">ICQ</option>
+							<option title value="IMAP2">IMAP2</option>
+							<option title value="IMAP3">IMAP3</option>
+							<option title value="IRC">IRC</option>
+							<option title value="NEWS">NEWS</option>
+							<option title value="NFS">NFS</option>
+							<option title value="NNTP">NNTP</option>
+							<option title value="PING">PING</option>
+							<option title value="POP3">POP3</option>
+							<option title value="PPTP">PPTP</option>
+							<option title value="RCMD">RCMD</option>
+							<option title value="REAL-AUDIO">REAL-AUDIO</option>
+							<option title value="REXEC">REXEC</option>
+							<option title value="RLOGIN">RLOGIN</option>
+							<option title value="RTELNET">RTELNET</option>
+							<option title value="RTSP:TCP">RTSP:TCP</option>
+							<option title value="RTSP:UDP">RTSP:UDP</option>
+							<option title value="SFTP">SFTP</option>
+							<option title value="SMTP">SMTP</option>
+							<option title value="SNMP:TCP">SNMP:TCP</option>
+							<option title value="SNMP:UDP">SNMP:UDP</option>
+							<option title value="SNMP-TRAPS:TCP">SNMP-TRAPS:TCP</option>
+							<option title value="SNMP-TRAPS:UDP">SNMP-TRAPS:UDP</option>
+							<option title value="SQL-NET">SQL-NET</option>
+							<option title value="SSH:TCP">SSH:TCP</option>
+							<option title value="SSH:UDP">SSH:UDP</option>
+							<option title value="STRMWORKS">STRMWORKS</option>
+							<option title value="TACACS">TACACS</option>
+							<option title value="TELNET">TELNET</option>
+							<option title value="TFTP">TFTP</option>
+							<option title value="RIP">RIP</option>
+							<option title value="IKE">IKE</option>
+							<option title value="SHTTPD">SHTTPD</option>
+							<option title value="IPSEC-UDP-ENCAP">IPSEC-UDP-ENCAP</option>
+							<option title value="IDENT">IDENT</option>
+							<option title value="VDOLIVE">VDOLIVE</option>
+							<option title value="SSH">SSH</option>
+							<option title value="SIP-TCP">SIP-TCP</option>
+							<option title value="SIP-UDP">SIP-UDP</option>
+							<option title value="ICMPv6-TYPE-1">ICMPv6-TYPE-1</option>
+							<option title value="ICMPv6-TYPE-2">ICMPv6-TYPE-2</option>
+							<option title value="ICMPv6-TYPE-3">ICMPv6-TYPE-3</option>
+							<option title value="ICMPv6-TYPE-4">ICMPv6-TYPE-4</option>
+							<option title value="ICMPv6-TYPE-127">ICMPv6-TYPE-127</option>
+							<option title value="ICMPv6-TYPE-128">ICMPv6-TYPE-128</option>
+							<option title value="ICMPv6-TYPE-134">ICMPv6-TYPE-134</option>
+							<option title value="ICMPv6-TYPE-135">ICMPv6-TYPE-135</option>
+							<option title value="ICMPv6-TYPE-136">ICMPv6-TYPE-136</option>
+							<option title value="ICMPv6-TYPE-137">ICMPv6-TYPE-137</option>
+							<option title value="ICMPv6-TYPE-255">ICMPv6-TYPE-255</option>
+						</select>
+					</div>
+					<div class="break" id="break5_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_action_div">
+						<label>Action </label>
+						<select size="1" name="firewallRules.action" id="cri_action" onChange="firewallActionCheck('cri_action')">
+							<option value="1">Always Block</option>
+							<option value="2">Always Allow</option>
+							<option value="3">Block by schedule, otherwise Allow</option>
+							<option value="4">Allow by schedule, otherwise Block</option>
+						</select>
+					</div>
+					<div class="break" id="break6_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_schedule_div">
+						<label>Select Schedule </label>
+						<select size="1" name="firewallRules.scheduleName" value id="cri_schedule" >
+							<option value="1">schedule1</option>
+							<option value="2">schedule2</option>
+						</select>
+					</div>
+					<div class="break" id="break7_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_sourceHost_div">
+						<label>Source Hosts </label>
+						<select size="1" id="cri_sourceHost" name="sourceHost" onChange="sourceHostTypeCheck();">
+							<option value="1">Any</option>
+							<option value="2">Single Address</option>
+							<option value="3">Address Range</option>
+						</select>
+					</div>
+					<div class="break" id="break8_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_sourceHostFrom_div">
+						<label>From </label>
+						<input type="text" name="firewallRules.sourceAddressStart" value id="cri_sourceHostFrom" maxlength="15" onKeyPress="return numericValueCheck (event, '.')" onKeyDown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }" >
+					</div>
+					<div class="break" id="break9_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_sourceHostTo_div">
+						<label>To </label>
+						<input type="text" name="firewallRules.sourceAddressEnd" value maxlength="15" id="cri_sourceHostTo" onKeyPress="return numericValueCheck (event, '.')" onKeyDown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }" >
+					</div>
+					<div class="break" id="break10_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_destinationHost_div">
+						<label>Destination Hosts </label>
+						<select size="1" id="cri_destinationHost" name="destinationHost"  onchange="destinationHostTypeCheck();">
+							<option value="1">Any</option>
+							<option value="2">Single Address</option>
+							<option value="3">Address Range</option>
+						</select>
+					</div>
+					<div  id="break11_div" class="break">
+						&nbsp;
+					</div>
+					<div  id="cri_destinationHostFrom_div" class="configRow">
+						<label>From </label>
+						<input type="text" name="firewallRules.destinationAddressStart" value id="cri_destinationHostFrom" maxlength="15" onKeyPress="return numericValueCheck (event, '.')" onKeyDown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }">
+					</div>
+					<div class="break" id="break12_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_destinationHostTo_div">
+						<label>To </label>
+						<input type="text" name="firewallRules.destinationAddressEnd" value maxlength="15" id="cri_destinationHostTo" onKeyPress="return numericValueCheck (event, '.')" onKeyDown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }">
+					</div>
+					<div class="break" id="break13_div">
+						&nbsp;
+					</div>
+					<div class="configRow" id="cri_log_div">
+						<label>Log </label>
+						<p>
+							<input type="radio" value="1" name="firewallRules.logStatus" checked>
+							Never
+						</p>
+						<p>
+							<input type="radio" value="2" name="firewallRules.logStatus">
+							Always
+						</p>
+					</div>
+					<div class="break" id="break14_div">
+						&nbsp;
+					</div>
+				</div>
+				<div class="dialogSubmitRow">
+					<input type="submit" onClick="return firewallRulesValidate()" value="Apply" class="btnSubmit" name="button.config.firewallRules.firewallRules.-1">
+				</div>
+			</div>
+			
+			
+			<div class="configDialog" id="cri_dialog2">
+				<div class="topBg">
+					<h1>IPv4 Firewall Rule Move</h1>
+					<a title="Close" id="btnClose2" href="#"></a>
+				</div>
+				<div class="dialogMidArea">					 
+					<div class="configRow">
+						<label>Select Position</label>
+						<select  id="cri_position" size="1">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						</select>
+					</div>
+					<div class="break">
+						&nbsp;
+					</div>
+				</div>
+				<div class="dialogSubmitRow">
+					<input type="submit" value="Apply" class="btnSubmit" name="button.config.firewallRules.firewallRules.-1">
+				</div>
+			</div>
+			
+			
+		</form>
+		<!-- End Pop Up Form  -->
+		<!-- End Pop Up Dialog  -->
+		<!-- Start Right click Div -->
+		<div class="contextMenu" id="contextMenu">
+			<ul>
+				<li>
+					<input id="optionSelectAll" type="checkbox" onClick="setSelectAll (this.id, 'edit move enable disable');" />
+					Select All
+				</li>
+				<li id="edit">
+					Edit
+				</li>
+					 
+				<li id="enable">
+					Enable
+				</li>
+				<li id="disable">
+					Disable
+				</li>
+				<li id="delete">
+					Delete
+				</li>
+			</ul>
+		</div>
+		<!-- End Right click Div-->
+		<!-- Start Header Include -->
+		<!--webbot bot="Include" u-include="header.html" tag="BODY" startspan -->
+		<div id="CRI_headerBg" align="center">
+			<div class="midWidth">
+				<div id="CRI_logo">
+					&nbsp;
+				</div>
+				<div class="FR headerRight">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top"><h5 class="FR">Rambus<label id="lblLoggedinUser" title="guest"> </label>(guest) </h5></td>
+							<td valign="top"><a class="btnLogout" href="index.html">
+							<div>
+								<div>
+									Logout
+								</div>
+							</div> </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Starts here -->
+		<div id="CRI_navBg" align="center">
+			<div class="midWidth">
+				<nav id="CRI_nav">
+					<ul>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu1" class="nolink">STATUS</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="deviceStatus.html">Device Status</a>
+								</li>
+								<li>
+									<a href="deviceUtilization.html">Device Utilization</a>
+								</li>
+								<li>
+									<a href="activeUsers.html">Active Users</a>
+								</li>
+								<li>
+									<a href="sshSessions.html">SSH Sessions</a>
+								</li>
+								<li>
+									<a href="viewLogs.html">View Logs</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu2" class="nolink">NETWORK</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="networkSetup.html">Network Setup</a>
+								</li>
+								<li>
+									<a href="ipv4StaticRouting.html">Static Routing</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu3" class="nolink">FIREWALL</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="defaultPolicy.html">Default Firewall Policy</a>
+								</li>
+								<li>
+									<a href="attackChecks.html">Attack Checks</a>
+								</li>
+								<li>
+									<a href="firewallRules.html">Firewall Rules</a>
+								</li>
+								<li>
+									<a href="customServices.html">Custom Services</a>
+								</li>
+								<li>
+									<a href="schedules.html">Schedules</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu end">
+							<a href="#" id="mainMenu4" class="nolink CRI_menuAdjust">ADMINISTRATION</a>
+							<ul class="CRI_menuOne">
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Admin<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="users.html">Users</a>
+										</li>
+										<li>
+											<a href="groups.html">Groups</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">Maintenance<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="backupRestore.html">Backup / Restore</a>
+										</li>
+										<li>
+											<a href="firmwareUpgrade.html">Firmware Upgrade</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="diagnostics.html">Diagnostics</a>
+								</li>
+								<li>
+									<a href="dateAndTime.html">Date &amp; Time</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Certificates<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="trustedCertificates.html">Trusted Certificates</a>
+										</li>
+										<li>
+											<a href="activeSelfCertificates.html">Active Self Certificates</a>
+										</li>
+										<li>
+											<a href="selfCertificateRequests.html">Self Certificate Requests</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">SSH Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="sshSetup.html">SSH Server Configuration</a>
+										</li>
+										<li>
+											<a href="sshKeyManagement.html">SSH Key Management</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="telnetSetup.html">Telnet Setup</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Logging Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="logsFacility.html">Logs Facility</a>
+										</li>
+										<li class="current">
+											<a href="logsConfiguration.html">Logs Configuration</a>
+										</li>
+										<li>
+											<a href="remoteLoggingConfiguration.html">Remote Logging
+											Configuration</a>
+										</li>
+								    <li><a href="logsRolloverSetup.html">Logs Rollover Setup</a></li>										
+									</ul>
+								</li>
+								<li><a href="appExtensions.html">App Extensions</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Ends here -->
+		<!-- Breadcrumb Section Starts here -->
+		<div id="CRI_breadcrumbBg" align="center">
+			<div class="midWidth">
+				<div class="CRI_breadCrumb">
+					<div id="CRI_breadCrumb"></div>
+				</div>
+				<div class="FR systemSearch">
+					<input id="menuSearch" value="Menu Search..." onFocus="watermark('menuSearch','Menu Search...');" onBlur="watermark('menuSearch','Menu Search...');" />
+					<div id="menuList" class="CRI_menuSearch"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Breadcrumb Section Ends here -->
+		<!-- start Menu Width auto adjust --->
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			$(".CRI_menuAdjust").each(function() {
+			$(this).mouseover(function() {
+			if($(this).next("ul").innerWidth()<$(this).innerWidth()) {
+			$(this).next("ul").width($(this).innerWidth()+2);
+			$(".subMenuTwo").css("left",$(this).innerWidth());
+			} else {
+			$(".subMenuTwo").css("left",$(this).next("ul").width()-2);
+			}
+			});
+			});
+			});
+		</script>
+		<!-- end Menu Width auto adjust --->
+	<!--webbot bot="Include" i-checksum="32026" endspan --><!-- End Header Include --><div align="center">
+			<table border="0" cellpadding="0" cellspacing="0" width="980px"  class="forConfigTbl">
+				<tr>
+					<td  valign="top" align="center">
+					<div class="midWidth">
+						<!-- Status message place holder...
+						[ 1. for error use "msgError"
+						2. for information use "msgInfo"
+						3. for sucess use "msgSuccess" CSS classes ]
+						<div class="msgError">
+						<p>Error Message Place Holder.</p>
+						</div>-->
+						<h1>Firewall Rules</h1>
+						<div class="help">
+							<a class="helpButton" href="#"> Help </a>
+						</div>
+							<div class="break2">&nbsp;</div>						
+						<div class="buttonsRow" id="cri_btnShowModal">
+								<input type="button" name="button.add.firewallRules.firewallRules.-1" class="btnSubmit" title="Add" value="Add New IPv4 Firewall Rule" id="btAdd" onClick="openForm('button.add.firewallRules.firewallRules','-1','cri_dialog','firewallRules','firewallRules.html');">
+							</div>
+							<div class="break">&nbsp;</div>
+						<div align="center">
+							<div class="CLR midTblWidth">
+								<!-- Start Table List Data -->
+								<div class="demo_jui">
+									<table cellpadding="0" cellspacing="0" border="0" class="display" id="recordsData">
+										<thead>
+											<tr>											   
+												<th>Status </th>
+												<th>Direction</th>
+												<th>Service </th>
+												<th>Action </th>
+												<th>Source Hosts </th>
+												<th>Destination Hosts </th>
+												<th>Log</th>
+											</tr>
+										</thead>
+										<tr class="gradeA" status="1" id="1">
+								 
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">192.168.1.1</td>
+											<td class="gradeA">192.168.1.100</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA"  id="2">
+											 
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">192.168.1.125</td>
+											<td class="gradeA">192.168.1.224</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1"  id="3">
+									 									
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA"  id="4">
+											 								
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1"  id="5">
+											 								
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">192.168.1.12</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA"  id="6">
+											 							
+											<td class="gradeA" >Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1"  id="7">
+											 							
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA"  id="8">
+											 							
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1"  id="9">
+											 								
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">192.168.1.36</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA"  id="10">
+											 						
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1" id="11">
+											 							
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA" id="12">
+											 
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">192.168.1.125</td>
+											<td class="gradeA">192.168.1.224</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1"  id="13"> 
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA" id="14"> 
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1" id="15"> 
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">192.168.1.12</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA" id="16"> 
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1" id="17"> 
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA" id="18"> 
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+										<tr class="gradeA" status="1" id="19">
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Outbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">192.168.1.12</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA" status="1" id="20"> 
+											<td class="gradeA" >Enabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Always</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Always</td>
+										</tr>
+										<tr class="gradeA" id="22"> 
+											<td class="gradeA">Disabled</td>
+											<td class="gradeA">Inbound</td>
+											<td class="gradeA">---</td>
+											<td class="gradeA">Allow Block</td>
+											<td class="gradeA">ANY</td>
+											<td class="gradeA">ANY</td>
+											<td>Never</td>
+										</tr>
+									</table>
+								</div><!-- End Table List Data -->
+							</div>
+						</div>
+					</div></td>
+				</tr>
+			</table>
+		</div><!-- Start Footer Include -->
+		<!--webbot bot="Include" u-include="footer.html" tag="BODY" startspan -->
+		<div id="CRI_footer">
+		<div class="midWidth">
+			Copyright &#169; 2014 Cryptography Research, Inc.
+		</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				window.onresize = function(event){
+					var leftPx = $(window).innerWidth()/2 - $(".configDialog").width()/2;
+					leftPx = Math.round(leftPx);
+					$(".configDialog").css('left',leftPx+'px');	
+				}
+			
+			});
+		</script>
+	<!--webbot bot="Include" i-checksum="17688" endspan --><!-- End Footer Include --><!-- Start Footer Scripts --><script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" language="javascript" src="js/contextMenu.js"></script><script type="text/javascript" language="javascript" src="js/globalMis.js"></script><script type="text/javascript" language="javascript" src="js/menu.js"></script><script type="text/javascript" language="javascript" src="js/globalTextValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalIpv4AddrValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalMgmt.js"></script><script type="text/javascript" language="javascript" src="js/firewallRules.js"></script><script language="JavaScript" src="js/menuSearchList.js" type="text/javascript"></script><script language="JavaScript" src="js/menuSearch.js" type="text/javascript"></script><script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			$('.gradeA').contextMenu('contextMenu', {
+			bindings: {
+			'editMenu': function(t,e,rowId) {
+			openForm('button.edit.firewallRules.firewallRules',rowId,'cri_dialog','firewallRules','firewallRules.html');
+			},'deleteMenu': function(t,e,rowId) {
+			deleteRows('button.delete.firewallRules.firewallRules','cri_frmFirewallRules',rowId,'optionSelectAll','cri_dialog','firewallRules','firewallRules');
+			},
+			'disableMenu': function(t,e,rowId) {
+			changeRowStauts('disable','cri_frmFirewallRules',rowId,'cri_dialog','firewallRules','firewallRules','firewallRules.firewallRules');
+			},'enableMenu': function(t,e,rowId) {
+			changeRowStauts('enable','cri_frmFirewallRules',rowId,'cri_dialog','firewallRules','firewallRules','firewallRules.firewallRules');
+			}
+			},onShowMenu: function(e,menu,rowId) {
+			
+			 
+			if($("#"+rowId).attr("status")=="1") {
+			$('#enableMenu',menu).remove();
+			} else {
+			$('#disableMenu',menu).remove();
+			}
+			return menu;
+			}
+			});
+			oTable=$('#recordsData').dataTable({
+			"bJQueryUI":true,
+			"sDom": '<"top"f<"clear">>rt<"bottom"ipl<"clear">>',
+			"sPaginationType":"input"
+			});
+			$("#btnClose").live("click", function(e) {
+			HideDialog('cri_dialog','cri_overlay');
+			e.preventDefault();
+			});
+			$("#btnClose2").live("click", function(e) {
+			HideDialog('cri_dialog2','cri_overlay');
+			e.preventDefault();
+			});
+
+			/* Help Section variables */
+			helpSection="firewallRulesIpv4";
+			helpConfigFile="firewall.txt";
+			/* Header section javascript bindings */
+			menuLoading();
+			mmSel("mainMenu3");
+			getBreadCrumb(8);
+			dataRightClick(true);
+			});
+		</script><!-- End Footer Scripts -->
+	</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<title>App Extensions | CryptoManager</title>
+<!--
+		Copyright (c) 2013 TeamF1, Inc. (www.TeamF1.com)
+		All rights reserved.
+		-->
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<link rel="stylesheet" type="text/css" href="css/table.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.4.custom.css" />
+<link rel="stylesheet" type="text/css" href="css/dateTimePicker.css" />
+<script type="text/javascript" language="javascript" src="js/jquery-1.8.0.min.js"></script>
+</head>
+
+<body>
+
+<form name="cri_frmAppExtensionsActions" id="cri_frmAppExtensionsActions" action="cgi-action.html" method="post">
+	<input type="hidden" name="thispage" id="thispage" value="AppExtensions.html">
+	<div id="cri_dialog" class="configDialog">
+	</div>
+</form>
+<!-- Right click Div Start -->
+<div class="contextMenu" id="contextMenu">
+	<ul>
+		<li id="install">Install </li>
+		<li id="delete">Remove </li>
+	</ul>
+</div>
+<!-- Right click Div End -->
+<!-- Start Header Include -->
+<!--webbot bot="Include" u-include="header.html" tag="BODY" startspan -->
+		<div id="CRI_headerBg" align="center">
+			<div class="midWidth">
+				<div id="CRI_logo">
+					&nbsp;
+				</div>
+				<div class="FR headerRight">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top"><h5 class="FR">Rambus<label id="lblLoggedinUser" title="guest"> </label>(guest) </h5></td>
+							<td valign="top"><a class="btnLogout" href="index.html">
+							<div>
+								<div>
+									Logout
+								</div>
+							</div> </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Starts here -->
+		<div id="CRI_navBg" align="center">
+			<div class="midWidth">
+				<nav id="CRI_nav">
+					<ul>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu1" class="nolink">STATUS</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="deviceStatus.html">Device Status</a>
+								</li>
+								<li>
+									<a href="deviceUtilization.html">Device Utilization</a>
+								</li>
+								<li>
+									<a href="activeUsers.html">Active Users</a>
+								</li>
+								<li>
+									<a href="sshSessions.html">SSH Sessions</a>
+								</li>
+								<li>
+									<a href="viewLogs.html">View Logs</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu2" class="nolink">NETWORK</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="networkSetup.html">Network Setup</a>
+								</li>
+								<li>
+									<a href="ipv4StaticRouting.html">Static Routing</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu3" class="nolink">FIREWALL</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="defaultPolicy.html">Default Firewall Policy</a>
+								</li>
+								<li>
+									<a href="attackChecks.html">Attack Checks</a>
+								</li>
+								<li>
+									<a href="firewallRules.html">Firewall Rules</a>
+								</li>
+								<li>
+									<a href="customServices.html">Custom Services</a>
+								</li>
+								<li>
+									<a href="schedules.html">Schedules</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu end">
+							<a href="#" id="mainMenu4" class="nolink CRI_menuAdjust">ADMINISTRATION</a>
+							<ul class="CRI_menuOne">
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Admin<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="users.html">Users</a>
+										</li>
+										<li>
+											<a href="groups.html">Groups</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">Maintenance<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="backupRestore.html">Backup / Restore</a>
+										</li>
+										<li>
+											<a href="firmwareUpgrade.html">Firmware Upgrade</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="diagnostics.html">Diagnostics</a>
+								</li>
+								<li>
+									<a href="dateAndTime.html">Date &amp; Time</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Certificates<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="trustedCertificates.html">Trusted Certificates</a>
+										</li>
+										<li>
+											<a href="activeSelfCertificates.html">Active Self Certificates</a>
+										</li>
+										<li>
+											<a href="selfCertificateRequests.html">Self Certificate Requests</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">SSH Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="sshSetup.html">SSH Server Configuration</a>
+										</li>
+										<li>
+											<a href="sshKeyManagement.html">SSH Key Management</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="telnetSetup.html">Telnet Setup</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Logging Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="logsFacility.html">Logs Facility</a>
+										</li>
+										<li class="current">
+											<a href="logsConfiguration.html">Logs Configuration</a>
+										</li>
+										<li>
+											<a href="remoteLoggingConfiguration.html">Remote Logging
+											Configuration</a>
+										</li>
+								    <li><a href="logsRolloverSetup.html">Logs Rollover Setup</a></li>										
+									</ul>
+								</li>
+								<li><a href="appExtensions.html">App Extensions</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Ends here -->
+		<!-- Breadcrumb Section Starts here -->
+		<div id="CRI_breadcrumbBg" align="center">
+			<div class="midWidth">
+				<div class="CRI_breadCrumb">
+					<div id="CRI_breadCrumb"></div>
+				</div>
+				<div class="FR systemSearch">
+					<input id="menuSearch" value="Menu Search..." onFocus="watermark('menuSearch','Menu Search...');" onBlur="watermark('menuSearch','Menu Search...');" />
+					<div id="menuList" class="CRI_menuSearch"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Breadcrumb Section Ends here -->
+		<!-- start Menu Width auto adjust --->
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			$(".CRI_menuAdjust").each(function() {
+			$(this).mouseover(function() {
+			if($(this).next("ul").innerWidth()<$(this).innerWidth()) {
+			$(this).next("ul").width($(this).innerWidth()+2);
+			$(".subMenuTwo").css("left",$(this).innerWidth());
+			} else {
+			$(".subMenuTwo").css("left",$(this).next("ul").width()-2);
+			}
+			});
+			});
+			});
+		</script>
+		<!-- end Menu Width auto adjust --->
+	<!--webbot bot="Include" i-checksum="32026" endspan --><!-- End Header Include --><div align="center">
+	<table border="0" cellpadding="0" cellspacing="0" width="980px" class="forConfigTbl">
+		<tr>
+			<td valign="top" align="center">
+			<div class="midWidth">
+				<!-- Status message place holder...
+						[ 1. for error use "msgError"
+						2. for information use "msgInfo"
+						3. for sucess use "msgSuccess" CSS classes ]
+						<div class="msgError">
+						<p>Error Message Place Holder.</p>
+						</div>-->
+				<h1>Automatic Update </h1>
+				<div class="midArea">
+					<div class="help">
+						<a class="helpButton" href="#">Help </a></div>
+					<div align="left">
+						<form method="post" action="cgi-action.html" id="cri_frmAppExtension" name="cri_frmAppExtension">
+							<input type="hidden" value="appExtensions.html" id="thispage" name="thispage">
+                            
+                            <div class="configRow" id="cri_url_div">
+								<label>Repository URL</label>
+								<input id="cri_url" type="text" name="uri" maxlength="512" value>
+							</div>
+							<div class="break" id="break1_div">&nbsp;</div>
+							<div class="configRow">
+								<label>Enable Automatic Update </label>
+								<p>
+								<a class="enable-disable-off" id="cri_enableAutoupdate" alt="">
+								</a>
+								<input type="hidden" name="EnableAutoupdate" value="0">
+								</p>
+							</div>
+							<div class="break">&nbsp;</div>							
+
+							<div class="configRow" id="cri_autoUpdate_div">
+								<label>Auto Update</label>
+								<select size="1" id="cri_autoUpdate">
+									<option value="1">Check for New Versions</option>
+								  	<option value="2">Download & Install</option>
+									<option value="3">Download Only</option>
+								</select>
+							</div>
+							<div class="break" id="break11_div">
+&nbsp;</div>
+							<div class="configRow" id="cri_daySelect_div">
+								<label>Check for update</label>
+								<p>
+								<input type="radio" name="updates" value="1" checked="checked" id="cri_daySelect1" onClick="daySelectCheck('cri_daySelect1')">All 
+								Days</p>
+								<p>
+								<input type="radio" name="updates" value="2" id="cri_daySelect2" onClick="daySelectCheck('cri_daySelect2')">Specific 
+								Days</p>
+							</div>
+							<div class="break" id="break2_div">
+&nbsp;</div>
+							<div id="cri_allDays_div">
+								<div id="cri_monday_div" class="configRow">
+									<label>&nbsp;</label>
+									<p class="three"><span>Monday</span><a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_monday" value="0" name="DayOfWeek.monday">
+									</p>
+									<label class="threeTwo">&nbsp;</label>
+									<p class="three"><span>Tuesday </span>
+									<a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_tuesday" value="0" name="DayOfWeek.tuesday">
+									</p>
+								</div>
+								<div id="break3_div" class="break">
+&nbsp; </div>
+								<div id="cri_wednesday_div" class="configRow">
+									<label>&nbsp; </label>
+									<p class="three"><span>Wednesday </span>
+									<a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_wednesday" value="0" name="DayOfWeek.wednesday">
+									</p>
+									<label class="threeTwo">&nbsp; </label>
+									<p class="three"><span>Thursday </span>
+									<a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_thursday" value="0" name="DayOfWeek.thursday">
+									</p>
+								</div>
+								<div id="break5_div" class="break">
+&nbsp; </div>
+								<div id="cri_friday_div" class="configRow">
+									<label>&nbsp;</label>
+									<p class="three"><span>Friday </span>
+									<a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_friday" value="0" name="DayOfWeek.friday">
+									</p>
+									<label class="threeTwo">&nbsp;</label>
+									<p class="three"><span>Saturday </span>
+									<a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_saturday" value="0" name="DayOfWeek.saturday">
+									</p>
+								</div>
+								<div id="break7_div" class="break">
+&nbsp; </div>
+								<div id="cri_sunday_div" class="configRow">
+									<label>&nbsp;</label>
+									<p class="three"><span>Sunday </span>
+									<a class="enable-disable-off" alt=""></a>
+									<input type="hidden" id="cri_sunday" value="0" name="DayOfWeek.sunday">
+									</p>
+								</div>
+								<div id="break8_div" class="break">
+&nbsp; </div>
+							</div>
+							<div class="configRow" id="cri_dateTimePickerStart_div">
+								<label>&nbsp;</label>
+								<input type="hidden" id="cri_dateTimePickerStart" onchange="onchangeValueStart()" id="cri_dateTimePickerStart" value="_ _ : _ _ _ _">
+								<div id="cri_setDateTime">
+								</div>
+							</div>
+							<div id="break9_div" class="break">
+&nbsp;</div>
+							<div class="configRow" id="cri_dateTimePickerStartValue_div">
+								<label>Time </label>
+								<input type="text" id="cri_dateTimePickerStartValue" readonly class="setDateAndTime" value="_ _ : _ _ _ _">
+							</div>
+							<div id="break10_div" class="break">
+&nbsp; </div>
+							<div class="submitRow3">
+								<input type="reset" onClick="this.form.reset('cri_frmAppExtension');appExtensionsOnreset('cri_frmAppExtension');" title="Reset" value="Reset" class="btnReset">
+								<input type="submit" onClick="return pageValidate('cri_frmAppExtension')" title="Apply" value="Apply" class="btnSubmit" name="button.config.appExtensions.appExtensions.-1">
+							</div>
+							<div class="break">
+&nbsp; </div>
+						</form>
+					</div>
+					<div class="break">
+&nbsp;</div>
+					<h1>Manual Update</h1>
+					<div align="left">
+						<form method="post" action="cgi-action.html" id="cri_frmAppExtension1" name="cri_frmAppExtension1">
+							<input type="hidden" value="appExtensions.html" id="thispage" name="thispage">
+							<div class="configRow">
+								<label>Select Package </label>
+								<input id="cri_selectPackage" type="file" name="uri" maxlength="512" value>
+							</div>
+							<div class="break">
+&nbsp;</div>
+							<div class="submitRow3">
+								<input type="Submit" value="Install" class="btnSubmit" onClick="return fileUploadCheck ('cri_selectPackage', 'Please Select Package file to Update.')">
+							</div>
+							<div class="break">
+&nbsp; </div>
+						</form>
+					</div>
+				</div>
+				<h1>App Extensions</h1>
+                <div class="break2">
+&nbsp; </div>
+				<div class="buttonsRow" style="line-height: 35px;">
+					<form method="post" action="cgi-action.html" id="cri_frmAppExtensions" name="cri_frmAppExtensions3">
+						<input type="hidden" value="appExtensions.html" id="thispage" name="thispage">
+						<input type="submit" title="Check" value="CHECK FOR NEW EXTENSIONS" class="btnSubmit" name="button.check.appExtensions.appExtensions.-1" id="cri_btCheck">
+					</form>
+				</div>
+                <div class="break">
+&nbsp; </div>
+				<div class="CLR midTblWidth">
+					<div class="demo_jui">
+						<table cellpadding="0" cellspacing="0" border="0" class="display" id="recordsData">
+							<thead>
+								<tr>
+									<th>Extensions </th>
+									<th>Description </th>
+									<th>Status </th>
+								</tr>
+							</thead>
+							<tbody role="alert" aria-live="polite" aria-relevant="all">
+								<tr class="gradeA" req-action="req-action" id="1" version>
+									<td class="gradeA  sorting_1">f1fileshare</td>
+									<td>F1 application support packages</td>
+									<td class="installIcon">&nbsp; Installed</td>
+								</tr>
+								<tr class="gradeA" req-action id="2" version>
+									<td class="sorting_1">f1Branding</td>
+									<td>F1 Branding packages</td>
+									<td class="gradeA removeIcon ">&nbsp; Not Installed</td>
+								</tr>
+								<tr class="gradeA" req-action="req-action" id="3" version>
+									<td class="gradeA  sorting_1">f3fileshare</td>
+									<td>F3 application support packages</td>
+									<td class="installIcon">&nbsp; Installed</td>
+								</tr>
+								<tr class="gradeA" req-action id="4" version>
+									<td class="sorting_1">f4Branding</td>
+									<td>F4 Branding packages</td>
+									<td class="gradeA removeIcon ">&nbsp; Not Installed</td>
+								</tr>
+						</table>
+					</div>
+				</div>
+				
+			</div>
+			<div class="break">
+&nbsp; </div>
+			<div class="midWidth">
+				<h1>Installation History</h1>
+                <div class="break2">
+&nbsp; </div>
+                <div class="buttonsRow" id="cri_btnShowModal">
+						<form method="post" action="cgi-action.html" id="cri_frmAppExtensions" name="cri_frmAppExtensions">
+							<input type="hidden" value="appExtensions.html" id="thispage" name="thispage">
+							<input type="submit" name="button.clearHistory.appExtensions" class="btnSubmit" value="Clear History" id="btAdd" title="Clear History">
+						</form>
+					</div>
+					<div class="break">
+&nbsp; </div>
+				<div class="CLR midTblWidth">
+					<div class="configRow">
+						<textarea style="width:650px;" readonly>Tue Nov 13 10:00:26 f1fileshare version2.0.0 Installed
+Tue Nov 13 10:00:26 f1Branding version2.0.0 Installed</textarea> </div>
+					<div class="break">
+&nbsp; </div>
+					
+				</div>
+			</div>
+			</td>
+		</tr>
+	</table>
+</div>
+<!-- Start Footer Include -->
+<!--webbot bot="Include" u-include="footer.html" tag="BODY" startspan -->
+		<div id="CRI_footer">
+		<div class="midWidth">
+			Copyright &#169; 2014 Cryptography Research, Inc.
+		</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				window.onresize = function(event){
+					var leftPx = $(window).innerWidth()/2 - $(".configDialog").width()/2;
+					leftPx = Math.round(leftPx);
+					$(".configDialog").css('left',leftPx+'px');	
+				}
+			
+			});
+		</script>
+	<!--webbot bot="Include" i-checksum="17688" endspan --><!-- End Footer Include --><!-- Start Footer Scripts --><script type="text/javascript" language="javascript" src="js/jquery.dataTables.min.js"></script><script type="text/javascript" language="javascript" src="js/contextMenu.js"></script><script type="text/javascript" language="javascript" src="js/globalMis.js"></script><script type="text/javascript" language="javascript" src="js/menu.js"></script><script type="text/javascript" language="javascript" src="js/globalTextValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalMgmt.js"></script><script type="text/javascript" language="javascript" src="js/appExtensions.js"></script><script language="JavaScript" src="js/menuSearchList.js" type="text/javascript"></script><script language="JavaScript" src="js/menuSearch.js" type="text/javascript"></script><script language="JavaScript" src="js/dateTimePicker.js" type="text/javascript"></script><script type="text/javascript" charset="utf-8">
+
+				$(document).ready(function() {
+					
+					$("#cri_url").val($.trim($("#cri_url").val()));
+
+					$('.gradeA').contextMenu('contextMenu', {
+						bindings : {
+							'deleteMenu' : function(t, e, rowId) {
+								deleteRows('button.delete.appExtensions.appExtensions', 'cri_frmappExtensions', rowId, 'optionSelectAll', 'cri_dialog', 'appExtensions', 'appExtensions');
+							},
+							'installMenu' : function(t, e, rowId) {
+								deleteRows('button.install.appExtensions.appExtensions', 'cri_frmappExtensions', rowId, 'optionSelectAll', 'cri_dialog', 'appExtensions', 'appExtensions');
+							}
+						},
+						onShowMenu : function(e, menu, rowId) {
+
+							$('#installMenu').html("Install");
+
+							if ($("#" + rowId).attr("req-action") != "") {
+								$('#installMenu', menu).remove();
+							}
+							if ($("#" + rowId).attr("req-action") == "") {
+								$('#deleteMenu', menu).remove();
+								$('#installMenu').html("Install " + $("#" + rowId).attr("version"));
+							}
+							return menu;
+						}
+					});
+
+					oTable = $('#recordsData').dataTable({
+						"bJQueryUI" : true,
+						"sDom": '<"top"f<"clear">>rt<"bottom"ipl<"clear">>',
+						"sPaginationType":"input"
+					});
+
+					/* Help Section variables */
+					helpSection = "appExtensions";
+					helpConfigFile = "administration.txt";
+
+					/* Header section javascript bindings */
+					menuLoading();
+			        mmSel("mainMenu4");
+			        getBreadCrumb(28);
+                    dataRightClick(true);
+                   onclickCallAppExtFn();
+				});
+			</script>
+
+</body>
+
+</html>

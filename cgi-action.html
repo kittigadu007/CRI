@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<title>Login | CryptoManager</title>
+		<!--
+		Copyright (c) 2013 TeamF1, Inc. (www.TeamF1.com)
+		All rights reserved.
+		-->
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<script type="text/javascript" language="javascript" src="js/jquery-1.8.0.min.js"></script>		
+	</head>
+	<body>
+		<!-- Start Header Include -->
+		<!--webbot bot="Include" u-include="headerPlain.html" tag="BODY" startspan -->
+
+		<div id="CRI_headerBg" align="center">
+			<div class="midWidth">
+				<div id="CRI_logo">
+					&nbsp;
+				</div>
+			</div>
+		</div>
+
+		<!-- CRI Mainmenu Starts here -->
+		<div id="CRI_navBg" align="center">
+			<div class="midWidth">
+				&nbsp;
+			</div>
+		</div>
+		<!-- CRI Mainmenu Ends here -->
+		<!-- Breadcrumb Section Starts here -->
+		<div id="CRI_breadcrumbBg" align="center">
+			<div class="midWidth">
+
+			</div>
+		</div>
+		<!-- Breadcrumb Section Ends here -->
+
+	<!--webbot bot="Include" i-checksum="4833" endspan --><!-- End Header Include --><div align="center">
+			<table border="0" cellpadding="0" cellspacing="0" width="980px"  class="forConfigTbl">
+				<tr>
+					<td  valign="top" align="center" height="400">
+					<div class="midWidth2">
+						<div class="msgError">
+							<p>
+								This mock-up version does not support form actions. Please
+								re-login!
+							</p>
+						</div>
+						<div class="blank"></div>
+						<div class="break">
+							&nbsp;
+						</div>
+						<h1>Login</h1>
+						<div class="midAreaIndex">
+							<!--Start Configuration Form  -->
+							<form name action="deviceStatus.html">
+								<div class="break">
+									&nbsp;
+								</div>
+								<div class="configRow">
+									<label>Username </label>
+									<input type="text" value="admin" id="cri_userName">
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+								<div class="configRow">
+									<label>Password </label>
+									<input type="password" value="********" id="cri_password">
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+								<div class="submitRow2">
+									<a class="btn" href="deviceStatus.html" onClick="return loginValidate()">
+									<div>
+										<div>
+											Login
+										</div>
+									</div> </a>
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+							</form><!--End Configuration Form  -->
+						</div>
+					</div></td>
+				</tr>
+			</table><!-- Start Footer Include -->
+			<!--webbot bot="Include" u-include="footer.html" tag="BODY" startspan -->
+		<div id="CRI_footer">
+		<div class="midWidth">
+			Copyright &#169; 2014 Cryptography Research, Inc.
+		</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				window.onresize = function(event){
+					var leftPx = $(window).innerWidth()/2 - $(".configDialog").width()/2;
+					leftPx = Math.round(leftPx);
+					$(".configDialog").css('left',leftPx+'px');	
+				}
+			
+			});
+		</script>
+	<!--webbot bot="Include" i-checksum="17688" endspan --><!-- End Footer Include --></div>
+        <script type="text/javascript" language="javascript" src="js/globalTextValidations.js"></script>
+      	<script type="text/javascript" charset="utf-8">
+            function loginValidate() {
+				var txtFieldIdArr = new Array();
+				txtFieldIdArr[0] = "cri_userName,Please enter a valid Username";
+				txtFieldIdArr[1] = "cri_password,Please enter a valid Password";
+
+				if (txtFieldArrayCheck(txtFieldIdArr) == false)
+					return false;
+
+				return true;
+			}
+
+			function loginInit() {
+				var usrObj = document.getElementById('cri_userName');
+				if (!usrObj)
+					return;
+				usrObj.focus();
+			}
+
+			$(document).ready(function() {
+                loginInit();							
+			});
+		</script>
+	</body>
+</html>

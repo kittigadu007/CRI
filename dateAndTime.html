@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<title>Date & Time | CryptoManager</title>
+		<!--
+		Copyright (c) 2013 TeamF1, Inc. (www.TeamF1.com)
+		All rights reserved.
+		-->
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<link rel="stylesheet" type="text/css" href="css/dateTimePicker.css" />
+		<script type="text/javascript" language="javascript" src="js/jquery-1.8.0.min.js"></script>
+	</head>
+	<body>
+		<!-- Start Header Include -->
+		<!--webbot bot="Include" u-include="header.html" tag="BODY" startspan -->
+		<div id="CRI_headerBg" align="center">
+			<div class="midWidth">
+				<div id="CRI_logo">
+					&nbsp;
+				</div>
+				<div class="FR headerRight">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top"><h5 class="FR">Rambus<label id="lblLoggedinUser" title="guest"> </label>(guest) </h5></td>
+							<td valign="top"><a class="btnLogout" href="index.html">
+							<div>
+								<div>
+									Logout
+								</div>
+							</div> </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Starts here -->
+		<div id="CRI_navBg" align="center">
+			<div class="midWidth">
+				<nav id="CRI_nav">
+					<ul>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu1" class="nolink">STATUS</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="deviceStatus.html">Device Status</a>
+								</li>
+								<li>
+									<a href="deviceUtilization.html">Device Utilization</a>
+								</li>
+								<li>
+									<a href="activeUsers.html">Active Users</a>
+								</li>
+								<li>
+									<a href="sshSessions.html">SSH Sessions</a>
+								</li>
+								<li>
+									<a href="viewLogs.html">View Logs</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu2" class="nolink">NETWORK</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="networkSetup.html">Network Setup</a>
+								</li>
+								<li>
+									<a href="ipv4StaticRouting.html">Static Routing</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu3" class="nolink">FIREWALL</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="defaultPolicy.html">Default Firewall Policy</a>
+								</li>
+								<li>
+									<a href="attackChecks.html">Attack Checks</a>
+								</li>
+								<li>
+									<a href="firewallRules.html">Firewall Rules</a>
+								</li>
+								<li>
+									<a href="customServices.html">Custom Services</a>
+								</li>
+								<li>
+									<a href="schedules.html">Schedules</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu end">
+							<a href="#" id="mainMenu4" class="nolink CRI_menuAdjust">ADMINISTRATION</a>
+							<ul class="CRI_menuOne">
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Admin<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="users.html">Users</a>
+										</li>
+										<li>
+											<a href="groups.html">Groups</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">Maintenance<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="backupRestore.html">Backup / Restore</a>
+										</li>
+										<li>
+											<a href="firmwareUpgrade.html">Firmware Upgrade</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="diagnostics.html">Diagnostics</a>
+								</li>
+								<li>
+									<a href="dateAndTime.html">Date &amp; Time</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Certificates<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="trustedCertificates.html">Trusted Certificates</a>
+										</li>
+										<li>
+											<a href="activeSelfCertificates.html">Active Self Certificates</a>
+										</li>
+										<li>
+											<a href="selfCertificateRequests.html">Self Certificate Requests</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">SSH Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="sshSetup.html">SSH Server Configuration</a>
+										</li>
+										<li>
+											<a href="sshKeyManagement.html">SSH Key Management</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="telnetSetup.html">Telnet Setup</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Logging Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="logsFacility.html">Logs Facility</a>
+										</li>
+										<li class="current">
+											<a href="logsConfiguration.html">Logs Configuration</a>
+										</li>
+										<li>
+											<a href="remoteLoggingConfiguration.html">Remote Logging
+											Configuration</a>
+										</li>
+								    <li><a href="logsRolloverSetup.html">Logs Rollover Setup</a></li>										
+									</ul>
+								</li>
+								<li><a href="appExtensions.html">App Extensions</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Ends here -->
+		<!-- Breadcrumb Section Starts here -->
+		<div id="CRI_breadcrumbBg" align="center">
+			<div class="midWidth">
+				<div class="CRI_breadCrumb">
+					<div id="CRI_breadCrumb"></div>
+				</div>
+				<div class="FR systemSearch">
+					<input id="menuSearch" value="Menu Search..." onfocus="watermark('menuSearch','Menu Search...');" onblur="watermark('menuSearch','Menu Search...');" />
+					<div id="menuList" class="CRI_menuSearch"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Breadcrumb Section Ends here -->
+		<!-- start Menu Width auto adjust --->
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			$(".CRI_menuAdjust").each(function() {
+			$(this).mouseover(function() {
+			if($(this).next("ul").innerWidth()<$(this).innerWidth()) {
+			$(this).next("ul").width($(this).innerWidth()+2);
+			$(".subMenuTwo").css("left",$(this).innerWidth());
+			} else {
+			$(".subMenuTwo").css("left",$(this).next("ul").width()-2);
+			}
+			});
+			});
+			});
+		</script>
+		<!-- end Menu Width auto adjust --->
+	<!--webbot bot="Include" i-checksum="32026" endspan --><!-- End Header Include --><div align="center">
+			<table border="0" cellpadding="0" cellspacing="0" width="980px"  class="forConfigTbl">
+				<tr>
+					<td  valign="top" align="center">
+					<div class="midWidth">
+						<!-- Status message place holder...
+						[ 1. for error use "msgError"
+						2. for information use "msgInfo"
+						3. for sucess use "msgSuccess" CSS classes ]
+						<div class="msgError">
+						<p>Error Message Place Holder.</p>
+						</div>-->
+						<h1>Date and Time</h1>
+						<div class="help">
+							<a class="helpButton" href="#"> Help </a>
+						</div>
+						<div align="left">
+							<!--Start Configuration Form  -->
+							<form name="cri_frmDateAndTime" id="cri_frmDateAndTime" method="post" action="cgi-action.html">
+								<input type="hidden" name="thispage" id="thispage" value="dateAndTime.html">
+								<h2>Date and Time</h2>
+								<div class="configRow" id="cri__div">
+									<label>Current System Time</label>
+									<p>
+										Monday, July 22, 2013, 00:53:54 (GMT +0530)
+									</p>
+								</div>
+								<div class="break" id="break__div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_selTimezone_div">
+									<label>Time Zone </label>
+									<select name="timezone" id="cri_selTimezone" onchange="timezoneCheck()">
+										<option value="0">(GMT) Greenwich Mean Time : Edinburgh,
+											London</option>
+										<option value="1">(GMT-12:00) Eniwetok,Kwajalein </option>
+										<option value="2">(GMT-11:00) Midway Island,Samoa </option>
+										<option value="3">(GMT-10:00) Hawaii</option>
+										<option value="4">(GMT-09:30) Marquesas Is. </option>
+										<option value="5">(GMT-09:00) Alaska</option>
+										<option value="6">(GMT-08:00) Pacific Time(US);
+											Tijuana</option>
+										<option value="10">(GMT-07:00) Mountain Time, Arizona(US) </option>
+										<option value="12">(GMT-06:00) Mexico City(US, Canada),
+											CentralTime(USA)</option>
+										<option value="13">(GMT-05:00) EasternTime, EasternTime(USA),
+											Lima, Indiana East</option>
+										<option value="15">(GMT-04:30) Caracas</option>
+										<option value="16">(GMT-04:00) Atlantic Time(Canada) </option>
+										<option value="17">(GMT-03:30) Newfoundland </option>
+										<option value="18">(GMT-03:00) Brasilia, Buenos
+											Aires</option>
+										<option value="19">(GMT-02:00) Mid-Atlantic </option>
+										<option value="20">(GMT-01:00) Azores, Cape Verde
+											Is.</option>
+										<option value="21">(GMT+01:00) Europe</option>
+										<option value="22">(GMT+02:00) Athens, Istanbul,
+											Minsk, Cairo</option>
+										<option value="23">(GMT+03:00) Baghdad, Kuwait,
+											Moscow</option>
+										<option value="25">(GMT+04:00) Abu Dhabi, Muscat,
+											Baku</option>
+										<option value="26">(GMT+04:30) Kabul</option>
+										<option value="27">(GMT+05:00) Ekaterinburg, Islamabad,
+											Karachi</option>
+										<option selected value="28">(GMT+05:30) Bombay,
+											Calcutta, Madras, Delhi</option>
+										<option value="29">(GMT+06:00) Almaty, Dhaka, Colombo </option>
+										<option value="30">(GMT+06:30) Burma</option>
+										<option value="31">(GMT+07:00) Bangkok, Hanoi, Jakarta </option>
+										<option value="32">(GMT+08:00) Beijing, Chongqing,
+											Hong Kong</option>
+										<option value="33">(GMT+09:00) Osaka, Sapporo, Tokyo,
+											Seoul</option>
+										<option value="34">(GMT+09:30) Adelaide, Darwin </option>
+										<option value="35">(GMT+10:00) Brisbane, Guam, Port
+											Moresby</option>
+										<option value="36">(GMT+10:30) Lord Howe Is. </option>
+										<option value="37">(GMT+11:00) Solomon Is, New Caledonia </option>
+										<option value="38">(GMT+11:30) Norfolk I. </option>
+										<option value="39">(GMT+12:00) Magadan,Auckland,
+											Wellington, New Zealand, Fiji</option>
+										<option value="40">(GMT+13:00) Tonga</option>
+										<option value="41">(GMT+14:00) Kiribati,Western
+											Samoa</option>
+									</select>
+								</div>
+								<div class="break" id="break_selTimezone_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_chkAutoDaylight_div">
+									<label>Enable Daylight Saving </label>
+									<p></p>
+									<p>
+										<a class="enable-disable-off" id="cri_chkAutoDaylight" alt=""></a>
+										<input type="hidden" name="autoDaylight" value="1">
+									</p>
+								</div>
+								<div class="break" id="break_chkAutoDaylight_div">
+									&nbsp;
+								</div>
+								<h2>NTP Servers Configuration</h2>
+								<div class="configRow" id="cri_enableNtpServer_div">
+									<label>NTP Server </label>
+									
+									<p>
+										<a class="enable-disable-off" id="cri_enableNtpServer" alt=""></a>
+										<input type="hidden" name="EnableNtpServer" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_enableNtpServer_div">
+									&nbsp;
+								</div>
+								<div id="cri_tblNTPSvrs_div">
+									<div class="configRow" id="cri_ntpServers_div">
+										<label>Default / Custom </label>
+										<select size="1" onchange="ntpServerCheck();" id="cri_ntpServers">
+										<option value="1">Default NTP Server</option>
+										<option value="2">Custom NTP Server</option>
+										</select>
+									</div>
+									<div class="break" id="break_ntpServers_div">
+										&nbsp;
+									</div>
+									
+									<div class="configRow" id="cri_txtCustomNtp1_div">
+										<label>Primary NTP Server </label>
+										<input type="text" name="server1" value="0.pool.ntp.org" id="cri_txtCustomNtp1" onkeydown="if (event.keyCode == 9) { return (ipaddrValidate (this.id) || validateFQDN(this.id)); }">
+									</div>
+									<div class="break" id="break_txtCustomNtp1_div">
+										&nbsp;
+									</div>
+									<div class="configRow" id="cri_txtCustomNtp2_div">
+										<label>Secondary NTP Server </label>
+										<input type="text" name="server2" value="1.pool.ntp.org" id="cri_txtCustomNtp2" onkeydown="if (event.keyCode == 9) { return (ipaddrValidate (this.id) || validateFQDN(this.id)); }">
+									</div>
+									<div class="break" id="break_txtCustomNtp2_div">
+										&nbsp;
+									</div>
+									<div class="configRow" id="cri_txtReSync_div">
+										<label>Time to re-synchronize</label>
+										<input type="text" maxlength="4" name="reSyncNtpVal" class="one" id="cri_txtReSync" value="120" onkeypress="return numericValueCheck (event)" onkeydown="if (event.keyCode == 9) {return numericValueRangeCheck (this, '', '', 5, 1440, true, '', 'Minutes');}">
+										<dl>
+											[Range: 5 - 1440] Minutes
+										</dl>
+									</div>
+									<div class="break" id="break_txtReSync_div">
+										&nbsp;
+									</div>
+								</div>
+								<div id="cri_tblBeforeDate1_div">
+									<h2>Set Date and Time Manually</h2>
+									<div class="configRow">
+										<label>&nbsp;</label>
+										<input type="text" id="cri_setDateTime" value="_ _ / _ _ / _ _ _ _   _ _ : _ _ _ _" onChange="onchangeValue()" class="hide">
+										<div id="cri_setDateTime"></div>
+									</div>
+									<div class="break">&nbsp;</div>									
+									<div class="configRow">
+										<label>Selected Date and Time </label>
+										<input type="text" id="txtExpirationDate" readonly class="setDateAndTime"  value="_ _ / _ _ / _ _ _ _   _ _ : _ _ _ _">
+									</div>
+									<div class="break">
+										&nbsp;
+									</div>
+								</div>
+								<div class="submitRow">
+								<input type="button" class="btnReset" title="Reset" value="Reset" onclick="this.form.reset(); dateAndTimeOnReset('cri_frmDateAndTime');">
+									<input type="submit" class="btnSubmit" title="Apply" value="Apply" name="button.config.dateAndTime" onclick="return timeZoneValidate('cri_frmDateAndTime')">									
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+							</form><!-- End Configuration Form  -->
+						</div>
+					</div></td>
+				</tr>
+			</table>
+		</div><!-- Start Footer Include -->
+		<!--webbot bot="Include" u-include="footer.html" tag="BODY" startspan -->
+		<div id="CRI_footer">
+		<div class="midWidth">
+			Copyright &#169; 2014 Cryptography Research, Inc.
+		</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				window.onresize = function(event){
+					var leftPx = $(window).innerWidth()/2 - $(".configDialog").width()/2;
+					leftPx = Math.round(leftPx);
+					$(".configDialog").css('left',leftPx+'px');	
+				}
+			
+			});
+		</script>
+	<!--webbot bot="Include" i-checksum="17688" endspan --><!-- End Footer Include --><!-- Start Footer Scripts --><script type="text/javascript" language="javascript" src="js/globalMis.js"></script><script type="text/javascript" language="javascript" src="js/menu.js"></script><script type="text/javascript" language="javascript" src="js/globalTextValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalIpv4AddrValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalMgmt.js"></script><script type="text/javascript" language="javascript" src="js/dateAndTime.js"></script><script language="JavaScript" src="js/menuSearchList.js" type="text/javascript"></script><script language="JavaScript" src="js/menuSearch.js" type="text/javascript"></script><script language="JavaScript" src="js/dateTimePicker.js" type="text/javascript"></script><script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			/* Help Section variables */
+			helpSection="dateAndTime";
+			helpConfigFile="administration.txt";
+			/* Header section javascript bindings */
+			menuLoading();
+			mmSel("mainMenu4");
+			getBreadCrumb(16);
+			});
+		</script><script type="text/javascript">
+			$(function() {
+			var curr=new Date().getFullYear();
+			var opt= {}
+			opt.datetime= {
+			preset:'datetime',minDate:new Date(2000,3,10,9,22),maxDate:new Date(2099,7,30,15,44),stepMinute:1
+			};
+			$('#cri_setDateTime').val($('#txtExpirationDate').val());
+			$('#cri_setDateTime').scroller('destroy').scroller($.extend(opt["datetime"], {
+			mode:"scroller",display:"inline"
+			}));
+			});
+			function onchangeValue() {
+			$('#txtExpirationDate').val($('#cri_setDateTime').val());
+			}
+		</script><!-- End Footer Scripts -->
+	</body>
+</html>

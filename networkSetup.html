@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<title>Network Setup | CryptoManager</title>
+		<!--
+		Copyright (c) 2013 TeamF1, Inc. (www.TeamF1.com)
+		All rights reserved.
+		-->
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<script type="text/javascript" language="javascript" src="js/jquery-1.8.0.min.js"></script>
+	</head>
+	<body>
+		<!-- Start Header Include -->
+		<!--webbot bot="Include" u-include="header.html" tag="BODY" startspan -->
+		<div id="CRI_headerBg" align="center">
+			<div class="midWidth">
+				<div id="CRI_logo">
+					&nbsp;
+				</div>
+				<div class="FR headerRight">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top"><h5 class="FR">Rambus<label id="lblLoggedinUser" title="guest"> </label>(guest) </h5></td>
+							<td valign="top"><a class="btnLogout" href="index.html">
+							<div>
+								<div>
+									Logout
+								</div>
+							</div> </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Starts here -->
+		<div id="CRI_navBg" align="center">
+			<div class="midWidth">
+				<nav id="CRI_nav">
+					<ul>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu1" class="nolink">STATUS</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="deviceStatus.html">Device Status</a>
+								</li>
+								<li>
+									<a href="deviceUtilization.html">Device Utilization</a>
+								</li>
+								<li>
+									<a href="activeUsers.html">Active Users</a>
+								</li>
+								<li>
+									<a href="sshSessions.html">SSH Sessions</a>
+								</li>
+								<li>
+									<a href="viewLogs.html">View Logs</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu2" class="nolink">NETWORK</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="networkSetup.html">Network Setup</a>
+								</li>
+								<li>
+									<a href="ipv4StaticRouting.html">Static Routing</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu3" class="nolink">FIREWALL</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="defaultPolicy.html">Default Firewall Policy</a>
+								</li>
+								<li>
+									<a href="attackChecks.html">Attack Checks</a>
+								</li>
+								<li>
+									<a href="firewallRules.html">Firewall Rules</a>
+								</li>
+								<li>
+									<a href="customServices.html">Custom Services</a>
+								</li>
+								<li>
+									<a href="schedules.html">Schedules</a>
+								</li>
+							</ul>
+						</li>
+						<li class="CRI_mainMenu end">
+							<a href="#" id="mainMenu4" class="nolink CRI_menuAdjust">ADMINISTRATION</a>
+							<ul class="CRI_menuOne">
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Admin<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="users.html">Users</a>
+										</li>
+										<li>
+											<a href="groups.html">Groups</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">Maintenance<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="backupRestore.html">Backup / Restore</a>
+										</li>
+										<li>
+											<a href="firmwareUpgrade.html">Firmware Upgrade</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="diagnostics.html">Diagnostics</a>
+								</li>
+								<li>
+									<a href="dateAndTime.html">Date &amp; Time</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Certificates<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="trustedCertificates.html">Trusted Certificates</a>
+										</li>
+										<li>
+											<a href="activeSelfCertificates.html">Active Self Certificates</a>
+										</li>
+										<li>
+											<a href="selfCertificateRequests.html">Self Certificate Requests</a>
+										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">SSH Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="sshSetup.html">SSH Server Configuration</a>
+										</li>
+										<li>
+											<a href="sshKeyManagement.html">SSH Key Management</a>
+										</li>
+									</ul>
+
+								</li>
+								<li>
+									<a href="telnetSetup.html">Telnet Setup</a>
+								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Logging Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="logsFacility.html">Logs Facility</a>
+										</li>
+										<li class="current">
+											<a href="logsConfiguration.html">Logs Configuration</a>
+										</li>
+										<li>
+											<a href="remoteLoggingConfiguration.html">Remote Logging
+											Configuration</a>
+										</li>
+								    <li><a href="logsRolloverSetup.html">Logs Rollover Setup</a></li>										
+									</ul>
+								</li>
+								<li><a href="appExtensions.html">App Extensions</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Ends here -->
+		<!-- Breadcrumb Section Starts here -->
+		<div id="CRI_breadcrumbBg" align="center">
+			<div class="midWidth">
+				<div class="CRI_breadCrumb">
+					<div id="CRI_breadCrumb"></div>
+				</div>
+				<div class="FR systemSearch">
+					<input id="menuSearch" value="Menu Search..." onfocus="watermark('menuSearch','Menu Search...');" onblur="watermark('menuSearch','Menu Search...');" />
+					<div id="menuList" class="CRI_menuSearch"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Breadcrumb Section Ends here -->
+		<!-- start Menu Width auto adjust --->
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			$(".CRI_menuAdjust").each(function() {
+			$(this).mouseover(function() {
+			if($(this).next("ul").innerWidth()<$(this).innerWidth()) {
+			$(this).next("ul").width($(this).innerWidth()+2);
+			$(".subMenuTwo").css("left",$(this).innerWidth());
+			} else {
+			$(".subMenuTwo").css("left",$(this).next("ul").width()-2);
+			}
+			});
+			});
+			});
+		</script>
+		<!-- end Menu Width auto adjust --->
+	<!--webbot bot="Include" i-checksum="32026" endspan --><!-- End Header Include --><div align="center">
+			<table border="0" cellpadding="0" cellspacing="0" width="980px"  class="forConfigTbl">
+				<tr>
+					<td  valign="top" align="center">
+					<div class="midWidth">
+						<!-- Status message place holder...
+						[ 1. for error use "msgError"
+						2. for information use "msgInfo"
+						3. for sucess use "msgSuccess" CSS classes ]
+						<div class="msgError">
+						<p>Error Message Place Holder.</p>
+						</div>-->
+						<h1>Network Setup</h1>
+						<div class="help">
+							<a class="helpButton" href="#"> Help </a>
+						</div>
+						<div align="left">
+							<!--Start Configuration Form  -->
+							<form name="cri_frmNetworkSetup" id="cri_frmNetworkSetup" action="cgi-action.html" method="post">
+								<input type="hidden" name="thispage" id="thispage" value="networkSetup.html">
+								<div class="configRow">
+									<label>Connection Type</label>
+									<select name="connectionType" id="cri_connectionType" onchange="connectionTypeCheck();">
+										<option value="1">Static IP</option>
+										<option selected value="2">Dynamic IP (DHCP)</option>
+									</select>
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_ipAddr_div">
+									<label>IP Address </label>
+									<input type="text" class="txt" id="cri_ipAddr" maxlength="15" value="" onkeypress="return numericValueCheck (event, '.')" onkeydown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }">
+								</div>
+								<div class="break" id="break_ipAddr_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_subnetmask_div">
+									<label>Subnet Mask </label>
+									<input type="text" id="cri_subnetmask" maxlength="15" name="NetMask" value="" onKeyPress="return numericValueCheck (event, '.')" onKeyDown="if (event.keyCode == 9) { return validNetMask (this.id) }">
+								</div>
+								<div class="break" id="cri_subnetmask_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_gatewayAddr_div">
+									<label>Gateway Address</label>
+									<input type="text" class="txt"  id="cri_gatewayAddr" maxlength="15" value="" onkeypress="return numericValueCheck (event, '.')" onkeydown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }">
+								</div>
+								<div class="break" id="break_gatewayAddr_div">
+									&nbsp;
+								</div>
+								<div class="configRow">
+									<label>DNS Server Source </label>
+									<select name="dnsServerSource" id="cri_dnsServerSource" onChange="dnsCheck();">
+										<option value="1" selected >Get Dynamically from Network</option>
+										<option value="2">Use These DNS Servers</option>
+									</select>
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_primaryDns_div">
+									<label>Primary DNS Server </label>
+									<input type="text" maxlength="15" name="PrimaryDns" value onkeypress="return numericValueCheck (event, '.')" onkeydown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', true, true, 'Invalid IP address.', 'for octet ', true); }" id="cri_primaryDns">
+								</div>
+								<div class="break" id="break_primaryDns_div">
+									&nbsp;
+								</div>
+								<div class="configRow"  id="cri_secondaryDns_div">
+									<label>Secondary DNS Server </label>
+									<input type="text" size="20" maxlength="15" name="SecondaryDns" value onkeypress="return numericValueCheck (event, '.')" onkeydown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', true, true, 'Invalid IP address.', 'for octet ', true); }" id="cri_secondaryDns">
+								</div>
+								<div class="break"  id="break_secondaryDns_div">
+									&nbsp;
+								</div>
+								<h2>MTU Settings</h2>
+								<div class="configRow">
+									<label>MTU Type </label>
+									<select size="1" id="cri_mtuSize" onchange="mtuTypeChgeck();">
+									<option value="1">Default</option>
+									<option value="2">Custom</option>									
+									</select>
+								</div>
+								<div class="break">&nbsp;</div>
+								<div class="configRow" id="cri_custom_div">
+									<label>Custom MTU</label>
+									<input type="text" id="cri_custom" maxlength="4" class="one" value="1500" onkeypress="return numericValueCheck (event)" onkeydown="if (event.keyCode == 9) {return numericValueRangeCheck (this, '', '',1200, 1500, true, '', 'Bytes');}">
+<dl>[Default: 1500, Range: 1200 - 1500] Bytes</dl>
+								</div>
+								<div class="break" id="break_custom_div">&nbsp;</div>								
+								<input type="hidden" name="wanIpAddress" id="cri_wanIpAddress" value>
+								<input type="hidden" name="wanSubnetMask" id="cri_wanSubnetMask" value>
+								<div class="submitRow">
+								<input type="reset" class="btnReset" value="Reset" title="Reset" onclick="this.form.reset(); networkSetupOnReset('cri_frmNetworkSetup');">
+									<input type="submit" name="button.config.lanIPv4Config.lanIPv4Config.-1" class="btnSubmit" value="Apply" title="Apply" onclick="return pageValidate('cri_frmNetworkSetup')">									
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+							</form>
+							<!-- End Configuration Form  -->
+						</div>
+					</div></td>
+				</tr>
+			</table>
+		</div><!-- Start Footer Include -->
+		<!--webbot bot="Include" u-include="footer.html" tag="BODY" startspan -->
+		<div id="CRI_footer">
+		<div class="midWidth">
+			Copyright &#169; 2014 Cryptography Research, Inc.
+		</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				window.onresize = function(event){
+					var leftPx = $(window).innerWidth()/2 - $(".configDialog").width()/2;
+					leftPx = Math.round(leftPx);
+					$(".configDialog").css('left',leftPx+'px');	
+				}
+			
+			});
+		</script>
+	<!--webbot bot="Include" i-checksum="17688" endspan --><!-- End Footer Include --><!-- Start Footer Scripts --><script type="text/javascript" language="javascript" src="js/globalMis.js"></script><script type="text/javascript" language="javascript" src="js/menu.js"></script><script type="text/javascript" language="javascript" src="js/globalTextValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalIpv4AddrValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalMgmt.js"></script><script type="text/javascript" language="javascript" src="js/networkSetup.js"></script><script language="JavaScript" src="js/menuSearchList.js" type="text/javascript"></script><script language="JavaScript" src="js/menuSearch.js" type="text/javascript"></script><script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			/* Help Section variables */
+			helpSection="networkSetup";
+			helpConfigFile="network.txt";
+			/* Header section javascript bindings */
+			menuLoading();
+			mmSel("mainMenu2");
+			getBreadCrumb(5);
+			});
+		</script><!-- End Footer Scripts -->
+	</body>
+</html>

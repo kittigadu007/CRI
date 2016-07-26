@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Language" content="en-us">
+		<title>Remote Logging Configuration | CryptoManager</title>
+		<!--
+		Copyright (c) 2013 TeamF1, Inc. (www.TeamF1.com)
+		All rights reserved.
+		-->
+		<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu.css" />
+		<script type="text/javascript" language="javascript" src="js/jquery-1.8.0.min.js"></script>
+	</head>
+	<body>
+		<!-- Start Header Include -->
+		<!--webbot bot="Include" u-include="header.html" tag="BODY" startspan -->
+		<div id="CRI_headerBg" align="center">
+			<div class="midWidth">
+				<div id="CRI_logo">
+					&nbsp;
+				</div>
+				<div class="FR headerRight">
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td valign="top"><h5 class="FR">Rambus<label id="lblLoggedinUser" title="guest"> </label>(guest) </h5></td>
+							<td valign="top"><a class="btnLogout" href="index.html">
+							<div>
+								<div>
+									Logout
+								</div>
+							</div> </a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Starts here -->
+		<div id="CRI_navBg" align="center">
+			<div class="midWidth">
+				<nav id="CRI_nav">
+					<ul>
+						<li class="CRI_mainMenu">
+							<a href="#" id="mainMenu1" class="nolink">STATUS</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="deviceStatus.html">Device Status</a>								</li>
+								<li>
+									<a href="deviceUtilization.html">Device Utilization</a>								</li>
+								<li>
+									<a href="activeUsers.html">Active Users</a>								</li>
+								<li>
+									<a href="sshSessions.html">SSH Sessions</a>								</li>
+								<li>
+									<a href="viewLogs.html">View Logs</a>								</li>
+							</ul>
+						</li>
+				  <li class="CRI_mainMenu">
+							<a href="#" id="mainMenu2" class="nolink">NETWORK</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="networkSetup.html">Network Setup</a>								</li>
+								<li>
+									<a href="ipv4StaticRouting.html">Static Routing</a>								</li>
+							</ul>
+						</li>
+				  <li class="CRI_mainMenu">
+							<a href="#" id="mainMenu3" class="nolink">FIREWALL</a>
+							<ul class="CRI_menuOne">
+								<li>
+									<a href="defaultPolicy.html">Default Firewall Policy</a>								</li>
+								<li>
+									<a href="attackChecks.html">Attack Checks</a>								</li>
+								<li>
+									<a href="firewallRules.html">Firewall Rules</a>								</li>
+								<li>
+									<a href="customServices.html">Custom Services</a>								</li>
+								<li>
+									<a href="schedules.html">Schedules</a>								</li>
+							</ul>
+						</li>
+				  <li class="CRI_mainMenu end">
+							<a href="#" id="mainMenu4" class="nolink CRI_menuAdjust">ADMINISTRATION</a>
+							<ul class="CRI_menuOne">
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Admin<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="users.html">Users</a>										</li>
+										<li>
+											<a href="groups.html">Groups</a>										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">Maintenance<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="backupRestore.html">Backup / Restore</a>										</li>
+										<li>
+											<a href="firmwareUpgrade.html">Firmware Upgrade</a>										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="diagnostics.html">Diagnostics</a>								</li>
+								<li>
+									<a href="dateAndTime.html">Date &amp; Time</a>								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Certificates<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="trustedCertificates.html">Trusted Certificates</a>										</li>
+										<li>
+											<a href="activeSelfCertificates.html">Active Self Certificates</a>										</li>
+										<li>
+											<a href="selfCertificateRequests.html">Self Certificate Requests</a>										</li>
+									</ul>
+								</li>
+								<li  class="CRI_subMain">
+									<a href="#" class="nolink">SSH Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="sshSetup.html">SSH Server Configuration</a>										</li>
+										<li>
+											<a href="sshKeyManagement.html">SSH Key Management</a>										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="telnetSetup.html">Telnet Setup</a>								</li>
+								<li class="CRI_subMain">
+									<a class="nolink" href="#">Logging Setup<span></span></a>
+									<ul class="subMenuTwo CRI_menuTwo">
+										<li>
+											<a href="logsFacility.html">Logs Facility</a>										</li>
+										<li class="current">
+											<a href="logsConfiguration.html">Logs Configuration</a>										</li>
+										<li>
+											<a href="remoteLoggingConfiguration.html">Remote Logging
+											Configuration</a>										</li>
+								    <li><a href="logsRolloverSetup.html">Logs Rollover Setup</a></li>										
+									</ul>
+								</li>
+								<li><a href="appExtensions.html">App Extensions</a></li>
+							</ul>
+						</li>
+				  </ul>
+				</nav>
+			</div>
+		</div>
+		<!-- CRI Mainmenu Ends here -->
+		<!-- Breadcrumb Section Starts here -->
+		<div id="CRI_breadcrumbBg" align="center">
+			<div class="midWidth">
+				<div class="CRI_breadCrumb">
+					<div id="CRI_breadCrumb"></div>
+				</div>
+				<div class="FR systemSearch">
+					<input id="menuSearch" value="Menu Search..." onFocus="watermark('menuSearch','Menu Search...');" onBlur="watermark('menuSearch','Menu Search...');" />
+					<div id="menuList" class="CRI_menuSearch"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Breadcrumb Section Ends here -->
+		<!-- start Menu Width auto adjust --->
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			$(".CRI_menuAdjust").each(function() {
+			$(this).mouseover(function() {
+			if($(this).next("ul").innerWidth()<$(this).innerWidth()) {
+			$(this).next("ul").width($(this).innerWidth()+2);
+			$(".subMenuTwo").css("left",$(this).innerWidth());
+			} else {
+			$(".subMenuTwo").css("left",$(this).next("ul").width()-2);
+			}
+			});
+			});
+			});
+		</script>
+		<!-- end Menu Width auto adjust --->
+	<!--webbot bot="Include" i-checksum="32026" endspan --><!-- End Header Include --><div align="center">
+			<table border="0" cellpadding="0" cellspacing="0" width="980px"  class="forConfigTbl">
+				<tr>
+					<td  valign="top" align="center">
+					<div class="midWidth">
+						<!-- Status message place holder...
+						[ 1. for error use "msgError"
+						2. for information use "msgInfo"
+						3. for sucess use "msgSuccess" CSS classes ]
+						<div class="msgError">
+						<p>Error Message Place Holder.</p>
+						</div>-->
+						<h1>Remote Logging Configuration</h1>
+						<div class="help">
+							<a class="helpButton" href="#"> Help </a>
+						</div>
+						<div align="left">
+							<!--Start Configuration Form  -->
+							<form action="cgi-action.html" method="post" id="cri_remoteLoggingConfiguration" name="cri_remoteLoggingConfiguration">
+								<input type="hidden" name="thispage" id="thispage" value="remoteLoggingConfiguration.html">
+								<h2>Log Options</h2>
+								<div class="configRow">
+									<label>Remote Log Identifier</label>
+									<input type="text" id="cri_remoteLogIdentifier">
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+								<h2>Enable E-mail Logs</h2>
+								<div class="configRow">
+									<label>E-Mail Logs</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableEmailLogs" alt=""></a>
+										<input type="hidden" name="EnableE-MailLogs" value="0">
+									</p>
+								</div>
+								<div class="break" >
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_emailServerAddress_div">
+									<label>E-Mail Server Address</label>
+									<input type="text" id="cri_emailServerAddress">
+								</div>
+								<div class="break" id="break_emailServerAddress_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_smtpPort_div">
+									<label>SMTP Port</label>
+									<input type="text" id="cri_smtpPort" onKeyDown="if (event.keyCode == 9) {return numericValueRangeCheck (this, '', '', 1, 65535, true, '', '');}" onKeyPress="return numericValueCheck (event)" maxlength="5" class="one" >
+									<dl>
+										[Range: 1 - 65535]
+									</dl>
+								</div>
+								<div class="break"  id="break_smtpPort_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_returnEmailAddress_div">
+									<label>Return E-Mail Address</label>
+									<input type="text" id="cri_returnEmailAddress">
+								</div>
+								<div class="break" id="break_returnEmailAddress_div">
+									&nbsp;
+								</div>
+								<div class="configRow"  id="cri_sendToEmailAddress1_div">
+									<label>Send to E-Mail Address 1</label>
+									<input type="text" id="cri_sendToEmailAddress1">
+								</div>
+								<div class="break" id="break_sendToEmailAddress1_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sendToEmailAddress2_div">
+									<label>Send to E-Mail Address 2</label>
+									<input type="text" id="cri_sendToEmailAddress2">
+								</div>
+								<div class="break" id="break_sendToEmailAddress2_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sendToEmailAddress3_div">
+									<label>Send to E-Mail Address 3</label>
+									<input type="text" id="cri_sendToEmailAddress3">
+								</div>
+								<div class="break" id="break_sendToEmailAddress3_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_authentication_div">
+									<label>Authentication with SMTP Server</label>
+									<select size="1" id="cri_authentication" onChange="authenticationTypeCheck()">
+										<option value="1">None</option>
+										<option value="2">Login Plain</option>
+										<option value="3">CRAM-MD5</option>
+									</select>
+								</div>
+								<div class="break" id="break_authentication_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_userName_div">
+									<label>User Name</label>
+									<input type="text" id="cri_userName">
+								</div>
+								<div class="break" id="break_userName_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_password_div">
+									<label>Password</label>
+									<input type="password" id="cri_password">
+								</div>
+								<div class="break" id="break_password_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_respondtoIdentd_div">
+									<label>Respond to Identd from SMTP Server</label>
+									<p>
+										<a class="enable-disable-off" id="cri_respondtoIdentd" alt=""></a>
+										<input type="hidden" name="RespondtoIdentdfromSMTPServer" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_respondtoIdentd_div">
+									&nbsp;
+								</div>
+								<div id="sentEmailLOgsBySchedule_div">
+									<h2>Send E-Mail Logs by Schedule</h2>
+									<div class="configRow" id="cri_unit_div">
+										<label>Unit</label>
+										<select size="1" id="cri_unit" onChange="changeUnitTypeCheck()" name="unit">
+											<option value="1">Never</option>
+											<option value="2">Hourly</option>
+											<option value="3">Daily</option>
+											<option value="4">Weekly</option>
+										</select>
+									</div>
+									<div class="break" id="break_unit_div">
+										&nbsp;
+									</div>
+									<div class="configRow" id="cri_day_div">
+										<label>Day</label>
+										<select size="1"  id="cri_day">
+											<option value="Monday">Monday</option>
+											<option value="Tuesday">Tuesday</option>
+											<option value="Wednesday">Wednesday</option>
+											<option value="Thursday">Thursday</option>
+											<option value="Friday">Friday</option>
+											<option value="Saturday">Saturday</option>
+											<option value="Sunday">Sunday</option>
+										</select>
+									</div>
+									<div class="break" id="break_day_div">
+										&nbsp;
+									</div>
+									<div class="configRow" id="cri_time_div">
+										<label>Time</label>
+										<select size="1" id="cri_time">
+											<option value="1">1:00</option>
+											<option value="2">2:00</option>
+											<option value="3">3:00</option>
+											<option value="4">4:00</option>
+											<option value="5">5:00</option>
+											<option value="6">6:00</option>
+											<option value="7">7:00</option>
+											<option value="8">8:00</option>
+											<option value="9">9:00</option>
+											<option value="10">10:00</option>
+											<option value="11">11:00</option>
+											<option value="12">12:00</option>
+										</select>
+									</div>
+									<div class="break" id="break_time_div">
+										&nbsp;
+									</div>
+								</div>
+								<!--<h2>Custom application configuration</h2>
+								<div class="configRow" id="cri_enableCustomAppLog_div">
+								<label>Custom Application Logs</label>
+								<p><a class="enable-disable-off"  id="cri_enableCustomAppLog" alt=""></a>
+										<input type="hidden" name="enableCustomAppLog" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_enableCustomAppLog_div">&nbsp;</div>-->
+								
+								<div class="configRow" id="cri_ipAddress_div">
+								<label>IP Address</label>
+								<input type="text" id="cri_ipAddress"  maxlength="15" value="" onKeyPress="return numericValueCheck (event, '.')" onKeyDown="if (event.keyCode == 9) { return ipv4AddrValidate (this, 'IP', false, true, 'Invalid IP address.', 'for octet ', true); }">
+								</div>
+								<div class="break" id="break_ipAddress_div">&nbsp;</div>
+								<div class="configRow" id="cri_port_div">
+								<label>Port</label>
+								<input type="text" id="cri_port" class="one" maxlength="5" onKeyPress="return numericValueCheck (event)" onKeyDown="if (event.keyCode == 9) {return numericValueRangeCheck (this, '', '', 1, 65535, true, '', '');}"><dl>[Range: 1 - 65535]</dl>
+								</div>
+								<div class="break" id="break_port_div">&nbsp;</div>
+								<h2>Syslog Server Configuration</h2>
+								<div class="configRow" id="cri_enableSysLogServer1_div">
+									<label>SysLog Server 1</label>
+									<p>
+										<a class="enable-disable-off"  id="cri_enableSysLogServer1" alt=""></a>
+										<input type="hidden" name="SysLogServer1" value="0">
+
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer1_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName1_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName1" id="cri_sysLogName1" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName1', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName1_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility1_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility1" name="cri_sysLogFacility1">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility1_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity1_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity1" name="cri_sysLogSeverity1">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity1_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer2_div">
+									<label>SysLog Server 2</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer2" alt=""></a>
+										<input type="hidden" name="SysLogServer2" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer2_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName2_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName2" id="cri_sysLogName2" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName2', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName2_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility2_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility2" name="cri_sysLogFacility2">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility2_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity2_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity2" name="cri_sysLogSeverity2">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity2_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer3_div">
+									<label>SysLog Server 3</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer3" alt=""></a>
+										<input type="hidden" name="SysLogServer3" value="0">
+
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer3_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName3_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName3" id="cri_sysLogName3" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName3', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName3_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility3_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility3" name="cri_sysLogFacility3">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility3_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity3_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity3" name="cri_sysLogSeverity3">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity3_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer4_div">
+									<label>SysLog Server 4</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer4" alt=""></a>
+										<input type="hidden" name="SysLogServer4" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer4_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName4_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName4" id="cri_sysLogName4" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName4', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName4_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility4_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility4" name="cri_sysLogFacility4">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility4_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity4_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity4" name="cri_sysLogSeverity4">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity4_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer5_div">
+									<label>SysLog Server 5</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer5" alt=""></a>
+										<input type="hidden" name="SysLogServer5" value="0">
+
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer5_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName5_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName5" id="cri_sysLogName5" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName5', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName5_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility5_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility5" name="cri_sysLogFacility5">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility5_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity5_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity5" name="cri_sysLogSeverity5">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity5_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer6_div">
+									<label>SysLog Server 6</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer6" alt=""></a>
+										<input type="hidden" name="SysLogServer6" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer6_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName6_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName6" id="cri_sysLogName6" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName6', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName6_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility6_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility6" name="cri_sysLogFacility6">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility6_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity6_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity6" name="cri_sysLogSeverity6">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity6_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer7_div">
+									<label>SysLog Server 7</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer7" alt=""></a>
+										<input type="hidden" name="SysLogServer7" value="0">
+
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer7_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName7_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName7" id="cri_sysLogName7" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName7', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName7_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility7_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility7" name="cri_sysLogFacility7">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility7_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity7_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity7" name="cri_sysLogSeverity7">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity7_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_enableSysLogServer8_div">
+									<label>SysLog Server 8</label>
+									<p>
+										<a class="enable-disable-off" id="cri_enableSysLogServer8" alt=""></a>
+										<input type="hidden" name="SysLogServer8" value="0">
+									</p>
+								</div>
+								<div class="break" id="break_enableSysLogServer8_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogName8_div">
+									<label>Name</label>
+									<input type="text" name="cri_sysLogName8" id="cri_sysLogName8" maxlength="32" onKeyDown="if (event.keyCode == 9) { return alphaNumericValueCheck('cri_sysLogName8', '_', 'Invalid Name. '); }">
+								</div>
+								<div class="break" id="break_sysLogName8_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogFacility8_div">
+									<label>Facility</label>
+									<select id="cri_sysLogFacility8" name="cri_sysLogFacility8">
+										<option value="1">All</option>
+										<option value="2">Kernel</option>
+										<option value="3">System</option>
+										<option value="4">Local0-Wireless</option>
+										<option value="5">Local1-UTM</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogFacility8_div">
+									&nbsp;
+								</div>
+								<div class="configRow" id="cri_sysLogSeverity8_div">
+									<label>Severity</label>
+									<select id="cri_sysLogSeverity8" name="cri_sysLogSeverity8">
+										<option value="1">All</option>
+										<option value="2">Log Debug</option>
+										<option value="3">Log Info</option>
+										<option value="4">Log Notice Log Warning </option>
+										<option value="5">Log Error</option>
+										<option value="6">Log Critical</option>
+										<option value="7">Log Alert</option>
+										<option value="8">Log Emerg</option>
+									</select>
+								</div>
+								<div class="break" id="break_sysLogSeverity8_div">
+									&nbsp;
+								</div>
+								<div class="submitRow">
+								<input type="reset" class="btnReset" title="Reset" value="Reset" id="btSave"  onClick="this.form.reset(); remoteLoggingConfigOnreset('cri_remoteLoggingConfiguration');">
+									<input type="submit" onClick="return remoteLoggingConfigValidate('cri_remoteLoggingConfiguration')" class="btnSubmit" title="Apply" value="Apply" id="btSave">
+									
+								</div>
+								<div class="break">
+									&nbsp;
+								</div>
+							</form><!--End Configuration Form  -->
+						</div>
+					</div></td>
+				</tr>
+			</table>
+		</div><!-- Start Footer Include -->
+		<!--webbot bot="Include" u-include="footer.html" tag="BODY" startspan -->
+		<div id="CRI_footer">
+		<div class="midWidth">
+			Copyright &#169; 2014 Cryptography Research, Inc.
+		</div>
+		</div>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				window.onresize = function(event){
+					var leftPx = $(window).innerWidth()/2 - $(".configDialog").width()/2;
+					leftPx = Math.round(leftPx);
+					$(".configDialog").css('left',leftPx+'px');	
+				}
+			
+			});
+		</script>
+	<!--webbot bot="Include" i-checksum="17688" endspan --><!-- End Footer Include --><!-- Start Footer Scripts --><script type="text/javascript" language="javascript" src="js/globalMis.js"></script><script type="text/javascript" language="javascript" src="js/menu.js"></script><script type="text/javascript" language="javascript" src="js/globalTextValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalIpv4AddrValidations.js"></script><script type="text/javascript" language="javascript" src="js/globalMgmt.js"></script><script type="text/javascript" language="javascript" src="js/remoteLoggingConfiguration.js"></script><script language="JavaScript" src="js/menuSearchList.js" type="text/javascript"></script><script language="JavaScript" src="js/menuSearch.js" type="text/javascript"></script><script type="text/javascript" language="javascript" src="js/globalIpv4AddrValidations.js"></script><script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+			/* Help Section variables */
+			helpSection="remoteLoggingConfiguration";
+			helpConfigFile="administration.txt";
+			/* Header section javascript bindings */
+			menuLoading();
+			mmSel("mainMenu4");
+			getBreadCrumb(24);
+			});
+		</script><!-- End Footer Scripts -->
+	</body>
+
+</html>
